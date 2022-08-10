@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+
+  <appenders>
+	<Console name="Console" target="SYSTEM_OUT">
+		<PatternLayout pattern="%-5p %c %m%n"/>
+	</Console>
+	
+	<File name="FILE" fileName="c:/tmp/prueba.log" append="false">
+		<PatternLayout pattern="%d %15.15t %-80.80c %-30.30M %-5p %m%n"/>
+	</File>
+
+  </appenders>
+
+  <loggers>
+
+    <Logger name="cl.bbr" level="TRACE">
+    </Logger>
+
+    <Logger name="org.mybatis.spring" level="INFO">
+    </Logger>
+
+    <Logger name="org.springframework" level="INFO">
+    </Logger>    
+
+    <Logger name="org.springframework.cache" level="TRACE">
+    </Logger>
+
+    <Logger name="org.apache.http" level="INFO">
+    </Logger>
+
+    <Logger name="org.jboss.resteasy" level="INFO">
+    </Logger>
+
+    <Logger name="net.sf.ehcache" level="ALL">
+    </Logger>    
+
+    <root level="DEBUG">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="FILE"/>
+    </root>
+    
+  </loggers>
+
+</Configuration>
